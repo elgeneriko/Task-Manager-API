@@ -1,0 +1,5 @@
+sudo killall mongod
+
+/home/arjun/mongodb/bin/mongod --dbpath=/home/arjun/mongodb-data
+
+
