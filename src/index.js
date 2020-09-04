@@ -1,3 +1,4 @@
+var cors = require('cors');
 const express = require('express');
 require('./db/mongoose');
 const jwt = require('jsonwebtoken');
@@ -10,6 +11,7 @@ const User = require('./models/user');
 const userRouter = require('./routers/user');
 const taskRouter = require('./routers/task');
 
+app.use(cors());
 app.use(userRouter);
 app.use(taskRouter);
 
