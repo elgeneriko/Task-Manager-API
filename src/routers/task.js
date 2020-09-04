@@ -26,7 +26,14 @@ router.post('/tasks',auth, async(req,res)=>{
     }
 })
 //GET /tasks?completed=true
-
+router.get('/alltasks', async(req,res)=>{
+    try{
+        const tasks = await Task.find();
+        return res.status(200).send(tasks);
+    }catch(error){
+        res.status(500).send(error);
+    }
+});
 router.get('/tasks', auth, async (req, res) => {
     const match = {}
     const sort = {}
